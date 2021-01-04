@@ -32,8 +32,8 @@ class SidebarViewController: UITableViewController {
         
         cell.textLabel?.text = titles[indexPath.row]
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
-        cell.textLabel?.textColor = UIColor.systemBlue
-        cell.backgroundColor = .white
+        cell.textLabel?.textColor = UIColor(red: 0.96, green: 0.96, blue: 0.86, alpha: 1.00)
+        cell.backgroundColor = .black
         
         return cell
     }
@@ -55,11 +55,11 @@ class SidebarViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .black
         
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 70))
         
-        headerView.backgroundColor = .systemBlue
+        headerView.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.86, alpha: 1.00)
         
         self.tableView.tableHeaderView = headerView
         
@@ -67,13 +67,13 @@ class SidebarViewController: UITableViewController {
         self.nameLabel.font = UIFont.boldSystemFont(ofSize: 15)
         self.nameLabel.frame.size = CGSize(width: 200, height: 20)
         self.nameLabel.frame.origin = CGPoint(x: 70, y: 15)
-        self.nameLabel.textColor = .white
+        self.nameLabel.textColor = .black
         self.nameLabel.backgroundColor = .clear
         
         headerView.addSubview(nameLabel)
         
         self.IDLabel.text = self.uinfo.loginId
-        self.IDLabel.textColor = .white
+        self.IDLabel.textColor = UIColor(red: 0.96, green: 0.96, blue: 0.86, alpha: 1.00)
         self.IDLabel.backgroundColor = .clear
         self.IDLabel.frame.size = CGSize(width: self.view.frame.width - 80, height: 15)
         self.IDLabel.frame.origin = CGPoint(x: 70, y: 40)

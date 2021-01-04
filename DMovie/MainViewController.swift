@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
             btn.image = UIImage(named: "sidemenu.png")
             btn.target = revealVC
             btn.action = #selector(revealVC.revealToggle(_:))
+            btn.tintColor = UIColor(red: 0.96, green: 0.96, blue: 0.86, alpha: 1.00)
             
             self.navigationItem.leftBarButtonItem = btn
             
@@ -129,14 +130,14 @@ extension MainViewController: UITableViewDelegate {
             let v = UIView()
             let textHeader = UILabel()
             
-            textHeader.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight(rawValue: 2.0))
-            textHeader.textColor = .systemBlue
+            textHeader.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight(rawValue: 2.0))
+            textHeader.textColor = UIColor(red: 0.96, green: 0.96, blue: 0.86, alpha: 1.00)
             
             v.frame.origin = CGPoint(x: 0, y: 0)
             
             textHeader.text = categories[section-1]
             textHeader.sizeToFit()
-            textHeader.frame.origin = CGPoint(x: 20 , y: 20)
+            textHeader.frame.origin = CGPoint(x: 20 , y: 15)
             v.frame.size = CGSize(width: self.view.frame.width , height: 10)
             v.backgroundColor = .none
             

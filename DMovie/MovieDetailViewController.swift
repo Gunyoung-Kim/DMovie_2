@@ -15,10 +15,11 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         let detailurl = URL(string: mvo.link!)
-        
+            
         let detailReq = URLRequest(url: detailurl!)
-        
         self.webView.load(detailReq)
+        
+        
     }
     
 }
