@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -208,16 +209,56 @@
             <objects>
                 <viewController id="Jy6-g0-bUa" customClass="TheaterViewController" customModule="DMovie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gTb-VF-nXt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zQs-mG-8cJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="GaN-sy-te7"/>
+                    <connections>
+                        <segue destination="tSd-AU-YkL" kind="show" id="MKS-Vi-5jy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXo-uj-5Fc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2672.8000000000002" y="702.99850074962524"/>
+        </scene>
+        <!--Theater Detail View Controller-->
+        <scene sceneID="0oj-aX-wYm">
+            <objects>
+                <viewController storyboardIdentifier="theater_detail" id="tSd-AU-YkL" customClass="TheaterDetailViewController" customModule="DMovie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q6T-Dj-tut">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSm-9P-qfT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aZ4-Xl-2dk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tSm-9P-qfT" firstAttribute="top" secondItem="aZ4-Xl-2dk" secondAttribute="top" id="1Jr-8t-Sc6"/>
+                            <constraint firstItem="aZ4-Xl-2dk" firstAttribute="trailing" secondItem="tSm-9P-qfT" secondAttribute="trailing" id="iyP-s8-fnL"/>
+                            <constraint firstItem="tSm-9P-qfT" firstAttribute="leading" secondItem="aZ4-Xl-2dk" secondAttribute="leading" id="oH0-dc-7n0"/>
+                            <constraint firstItem="aZ4-Xl-2dk" firstAttribute="bottom" secondItem="tSm-9P-qfT" secondAttribute="bottom" id="pRB-II-b9X"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yEa-fF-zgj"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="webView" destination="tSm-9P-qfT" id="UR7-SJ-wCU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adE-iM-nzm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3625" y="703"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Rjg-pc-e2N">
@@ -284,11 +325,12 @@
             </objects>
             <point key="canvasLocation" x="1735.2" y="-801.0494752623689"/>
         </scene>
-        <!--Item-->
+        <!--Movie-->
         <scene sceneID="QgA-uV-oQU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7po-H0-zX4" customClass="LightBarStyleNavi" customModule="DMovie" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="BWD-wG-PDD">
+                    <tabBarItem key="tabBarItem" title="Movie" id="BWD-wG-PDD">
+                        <imageReference key="image" image="play.rectangle" catalog="system" symbolScale="medium"/>
                         <color key="badgeColor" red="0.96851998569999997" green="0.94313128830000004" blue="0.66795999510000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -443,16 +485,24 @@
             </objects>
             <point key="canvasLocation" x="504.80000000000001" y="772.26386806596713"/>
         </scene>
-        <!--Item-->
+        <!--Theater-->
         <scene sceneID="snY-T7-RgD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="FpK-ns-pP9" customClass="DarkBarStyleNavi" customModule="DMovie" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="eCg-UC-wre"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FpK-ns-pP9" customClass="DarkBarStyleNavi" customModule="DMovie" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Theater" image="ticket.fill" catalog="system" id="eCg-UC-wre"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zF6-fx-r0g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.96024030449999997" green="0.96219950909999996" blue="0.87057632210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D2k-UR-zM7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Jy6-g0-bUa" kind="relationship" relationship="rootViewController" id="TEN-gj-K2N"/>
                     </connections>
@@ -504,6 +554,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="play.rectangle" catalog="system" width="128" height="93"/>
+        <image name="ticket.fill" catalog="system" width="128" height="84"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

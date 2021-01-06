@@ -17,6 +17,11 @@ class TheaterViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
         let cgvImage = NMFOverlayImage(name: "cgv.png")
         let megaboxImage = NMFOverlayImage(name: "megabox.jpg")
         let lotteImage = NMFOverlayImage(name: "lotte.png")
@@ -45,6 +50,15 @@ class TheaterViewController: UIViewController {
                         marker.iconImage = lotteImage
                     } else {
                         marker.iconImage = defaultImage
+                    }
+                    
+                    marker.touchHandler = { (overlay) -> Bool in
+                        let tdvc = self.storyboard?.instantiateViewController(identifier: "theater_detail") as! TheaterDetailViewController
+                        
+                        tdvc.theater = theater
+                        
+                        self.navigationController?.pushViewController(tdvc, animated: true)
+                        return true
                     }
                     
                     marker.captionText = theater.name!

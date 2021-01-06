@@ -14,6 +14,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         getBoxOffice()
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
         if let revealVC = self.revealViewController() {
             let btn = UIBarButtonItem()
             btn.image = UIImage(named: "sidemenu.png")

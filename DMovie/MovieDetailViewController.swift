@@ -18,8 +18,6 @@ class MovieDetailViewController: UIViewController {
             
         let detailReq = URLRequest(url: detailurl!)
         self.webView.load(detailReq)
-        
-        
     }
     
 }
