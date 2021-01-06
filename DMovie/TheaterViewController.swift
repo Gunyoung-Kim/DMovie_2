@@ -17,6 +17,12 @@ class TheaterViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
+        let cgvImage = NMFOverlayImage(name: "cgv.png")
+        let megaboxImage = NMFOverlayImage(name: "megabox.jpg")
+        let lotteImage = NMFOverlayImage(name: "lotte.png")
+        let defaultImage = NMFOverlayImage(name: "DMovieIcon.png")
+        let locationOverlay = self.mapView.locationOverlay
+        
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.requestAlwaysAuthorization()
         self.mapView.frame = self.view.frame
@@ -24,9 +30,7 @@ class TheaterViewController: UIViewController {
             DispatchQueue.global(qos: .default).async {
                 for theater in self.theaterManager.theaters {
                     let marker = NMFMarker()
-                    let cgvImage = NMFOverlayImage(name: "cgv.png")
-                    let megaboxImage = NMFOverlayImage(name: "megabox.jpg")
-                    let lotteImage = NMFOverlayImage(name: "lotte.png")
+                    
                     
                     guard theater.xpos != -1 || theater.ypos != -1 else {
                         continue
@@ -39,7 +43,16 @@ class TheaterViewController: UIViewController {
                         marker.iconImage = megaboxImage
                     } else if theater.name!.hasPrefix("롯데시네마") {
                         marker.iconImage = lotteImage
+                    } else {
+                        marker.iconImage = defaultImage
                     }
+                    
+                    marker.captionText = theater.name!
+                    marker.captionTextSize = 10
+                    marker.captionColor = .purple
+                    marker.captionMinZoom = 12
+                    marker.captionMaxZoom = 16
+                    marker.captionAligns = [NMFAlignType.top, NMFAlignType.bottom]
                     
                     self.markers.append(marker)
                 }
@@ -54,14 +67,7 @@ class TheaterViewController: UIViewController {
         
         self.mapView.positionMode = .direction
         
-        let locationOverlay = mapView.locationOverlay
-        
-        locationOverlay.hidden = false
-        
-        locationOverlay.touchHandler = { (overlay: NMFOverlay) ->Bool in
-            print("오버레이 터치됨")
-            return true
-        }
+        self.mapView.extent = NMGLatLngBounds(southWestLat: 31.43, southWestLng: 122.37, northEastLat: 44.35, northEastLng: 132)
        
         view.addSubview(self.mapView)
     }

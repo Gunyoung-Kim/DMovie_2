@@ -51,6 +51,12 @@ class SidebarViewController: UITableViewController {
             self.present(uv!, animated: true) {
                 self.revealViewController()?.revealToggle(self)
             }
+        } else if self.titles[indexPath.row] == "Version" {
+            let alert = UIAlertController(title: "버전 정보", message: "ver 0.0.0", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            
+            self.present(alert, animated: false)
         }
     }
     
@@ -73,7 +79,7 @@ class SidebarViewController: UITableViewController {
         headerView.addSubview(nameLabel)
         
         self.IDLabel.text = self.uinfo.loginId
-        self.IDLabel.textColor = UIColor(red: 0.96, green: 0.96, blue: 0.86, alpha: 1.00)
+        self.IDLabel.textColor = .black
         self.IDLabel.backgroundColor = .clear
         self.IDLabel.frame.size = CGSize(width: self.view.frame.width - 80, height: 15)
         self.IDLabel.frame.origin = CGPoint(x: 70, y: 40)

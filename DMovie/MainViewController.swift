@@ -98,16 +98,19 @@ extension MainViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             var cell: UITableViewCell
             cell = tableView.dequeueReusableCell(withIdentifier: "mainCell")!
+            cell.backgroundColor = .black
             return cell
         } else if indexPath.section == 1{
             var cell: DailyRow
             cell = tableView.dequeueReusableCell(withIdentifier: "dailyCell") as! DailyRow
             cell.viewcontroller = self
+            cell.backgroundColor = .black
             return cell
         } else {
             var cell: WeeklyRow
             cell = tableView.dequeueReusableCell(withIdentifier: "weeklyCell") as! WeeklyRow
             cell.viewcontroller = self
+            cell.backgroundColor = .black
             return cell
         }
     }
@@ -123,7 +126,7 @@ extension MainViewController: UITableViewDelegate {
             let v = UIView()
             v.frame.origin = CGPoint(x: 0, y: 0)
             v.frame.size = CGSize(width: self.view.frame.width , height: 10)
-            v.backgroundColor = .clear
+            v.backgroundColor = .black
             
             return v
         } else {
@@ -139,7 +142,7 @@ extension MainViewController: UITableViewDelegate {
             textHeader.sizeToFit()
             textHeader.frame.origin = CGPoint(x: 20 , y: 15)
             v.frame.size = CGSize(width: self.view.frame.width , height: 10)
-            v.backgroundColor = .none
+            v.backgroundColor = .black
             
             v.addSubview(textHeader)
             return v;
@@ -151,7 +154,7 @@ extension MainViewController: UITableViewDelegate {
         if indexPath.section == 0 {
             return CGFloat(300)
         } else {
-            return HttpManager().loadThumbnailImage(BoxOffice.shared.dailyRankList[0].imageUrl!).size.height + DailyRow().hardCodedPadding * 2
+            return HttpManager().loadThumbnailImage(BoxOffice.shared.dailyRankList[0].imageUrl!).size.height + DailyRow().hardCodedPadding * 5
         }
     }
  

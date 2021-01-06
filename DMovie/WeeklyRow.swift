@@ -22,6 +22,8 @@ extension WeeklyRow: UICollectionViewDataSource {
         
         let imageView = UIImageView(image: image)
         imageView.frame.size = CGSize(width: image.size.width, height: image.size.height + hardCodedPadding * 2)
+        imageView.layer.cornerRadius = imageView.frame.width / 12
+        imageView.layer.masksToBounds = true
         cell.addSubview(imageView)
         
         return cell
