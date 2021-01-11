@@ -34,10 +34,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t1F-bV-CQh">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="NPk-2q-Kr6">
-                                    <rect key="frame" x="0.0" y="465" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="609" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dolphin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VER-ak-zWd">
@@ -51,18 +51,18 @@
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainCell" rowHeight="156" id="x4N-bJ-QBX">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="156"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainCell" rowHeight="300" id="x4N-bJ-QBX">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x4N-bJ-QBX" id="9JE-kK-egG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dailyCell" rowHeight="126" id="DVu-tc-ZsY" customClass="DailyRow" customModule="DMovie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="184" width="375" height="126"/>
+                                        <rect key="frame" x="0.0" y="328" width="375" height="126"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DVu-tc-ZsY" id="xhM-ia-qmR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
@@ -104,7 +104,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weeklyCell" rowHeight="127" id="6zu-4V-15y" customClass="WeeklyRow" customModule="DMovie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="310" width="375" height="127"/>
+                                        <rect key="frame" x="0.0" y="454" width="375" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6zu-4V-15y" id="0Dq-6g-hFR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
@@ -154,10 +154,10 @@
                         <viewLayoutGuide key="safeArea" id="UzA-1R-AlQ"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="t1F-bV-CQh" firstAttribute="leading" secondItem="UzA-1R-AlQ" secondAttribute="leading" id="3gE-Zt-FSv"/>
-                            <constraint firstItem="UzA-1R-AlQ" firstAttribute="trailing" secondItem="t1F-bV-CQh" secondAttribute="trailing" id="WCw-D4-TQA"/>
-                            <constraint firstItem="t1F-bV-CQh" firstAttribute="top" secondItem="UzA-1R-AlQ" secondAttribute="top" id="mWx-TP-gdo"/>
-                            <constraint firstItem="UzA-1R-AlQ" firstAttribute="bottom" secondItem="t1F-bV-CQh" secondAttribute="bottom" id="mzB-7N-RP0"/>
+                            <constraint firstItem="t1F-bV-CQh" firstAttribute="bottom" secondItem="UzA-1R-AlQ" secondAttribute="bottom" id="EFR-V9-B9V"/>
+                            <constraint firstItem="t1F-bV-CQh" firstAttribute="top" secondItem="h8x-zk-prr" secondAttribute="top" id="PyC-bC-8sN"/>
+                            <constraint firstItem="t1F-bV-CQh" firstAttribute="trailing" secondItem="UzA-1R-AlQ" secondAttribute="trailing" id="RSq-NV-0OX"/>
+                            <constraint firstItem="t1F-bV-CQh" firstAttribute="leading" secondItem="UzA-1R-AlQ" secondAttribute="leading" id="Vk0-F4-JAz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W07-YZ-zY2"/>
@@ -204,7 +204,7 @@
             </objects>
             <point key="canvasLocation" x="2672.8000000000002" y="-31.03448275862069"/>
         </scene>
-        <!--Theater View Controller-->
+        <!--Theater-->
         <scene sceneID="iLa-Td-Pxt">
             <objects>
                 <viewController id="Jy6-g0-bUa" customClass="TheaterViewController" customModule="DMovie" customModuleProvider="target" sceneMemberID="viewController">
@@ -212,10 +212,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zQs-mG-8cJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="GaN-sy-te7"/>
+                    <navigationItem key="navigationItem" title="Theater" id="R5o-4h-a2W"/>
                     <connections>
                         <segue destination="tSd-AU-YkL" kind="show" id="MKS-Vi-5jy"/>
                     </connections>
@@ -224,16 +224,16 @@
             </objects>
             <point key="canvasLocation" x="2672.8000000000002" y="702.99850074962524"/>
         </scene>
-        <!--Theater Detail View Controller-->
+        <!--Title-->
         <scene sceneID="0oj-aX-wYm">
             <objects>
                 <viewController storyboardIdentifier="theater_detail" id="tSd-AU-YkL" customClass="TheaterDetailViewController" customModule="DMovie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q6T-Dj-tut">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSm-9P-qfT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -250,15 +250,22 @@
                             <constraint firstItem="aZ4-Xl-2dk" firstAttribute="bottom" secondItem="tSm-9P-qfT" secondAttribute="bottom" id="pRB-II-b9X"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yEa-fF-zgj"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationItem key="navigationItem" title="Title" id="mdz-pg-SJP">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" style="plain" id="DVl-0u-0yo">
+                            <color key="tintColor" red="0.96024030449999997" green="0.96219950909999996" blue="0.87057632210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="backBtn:" destination="tSd-AU-YkL" id="OQI-TJ-dPs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="webView" destination="tSm-9P-qfT" id="UR7-SJ-wCU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adE-iM-nzm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3625" y="703"/>
+            <point key="canvasLocation" x="3624.8000000000002" y="702.99850074962524"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Rjg-pc-e2N">
@@ -337,7 +344,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ekp-4E-Xx1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.96024030449999997" green="0.96219950909999996" blue="0.87057632210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.96024030449999997" green="0.96219950909999996" blue="0.87057632210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -488,13 +499,15 @@
         <!--Theater-->
         <scene sceneID="snY-T7-RgD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FpK-ns-pP9" customClass="DarkBarStyleNavi" customModule="DMovie" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FpK-ns-pP9" customClass="LightBarStyleNavi" customModule="DMovie" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Theater" image="ticket.fill" catalog="system" id="eCg-UC-wre"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zF6-fx-r0g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.96024030449999997" green="0.96219950909999996" blue="0.87057632210000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
@@ -554,6 +567,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="play.rectangle" catalog="system" width="128" height="93"/>
         <image name="ticket.fill" catalog="system" width="128" height="84"/>
         <systemColor name="systemBackgroundColor">

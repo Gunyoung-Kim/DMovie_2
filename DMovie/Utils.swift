@@ -19,6 +19,8 @@ class Utils {
         
         return alert
     }
+    
+    static let themeColor = UIColor(red: 0.96, green: 0.96, blue: 0.86, alpha: 1.00)
 }
 
 class LightBarStyleNavi: UINavigationController {

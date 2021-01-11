@@ -15,6 +15,11 @@ class TheaterViewController: UIViewController {
     var markers = [NMFMarker]()
     let mapView = NMFMapView()
     let locationManager = CLLocationManager()
+    var isBarHidden = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -58,6 +63,7 @@ class TheaterViewController: UIViewController {
                         tdvc.theater = theater
                         
                         self.navigationController?.pushViewController(tdvc, animated: true)
+                        print("\(locationOverlay.location.lat)")
                         return true
                     }
                     
@@ -84,5 +90,9 @@ class TheaterViewController: UIViewController {
         self.mapView.extent = NMGLatLngBounds(southWestLat: 31.43, southWestLng: 122.37, northEastLat: 44.35, northEastLng: 132)
        
         view.addSubview(self.mapView)
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
+        print("\(locationOverlay.location.lat)")
     }
 }

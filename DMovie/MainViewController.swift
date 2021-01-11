@@ -10,26 +10,23 @@ import Alamofire
 
 class MainViewController: UIViewController {
     var categories = ["오늘의 영화", "주간 베스트 영화"]
+    let image = UIImage(named: "toy_story.jpg")
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     override func viewDidLoad() {
         getBoxOffice()
+        self.navigationController?.isNavigationBarHidden = true
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+        /*
+        let rightBtn = UIBarButtonItem()
+        rightBtn.image = UIImage(systemName: "bell")
+        rightBtn.tintColor = Utils.themeColor
         
-        if let revealVC = self.revealViewController() {
-            let btn = UIBarButtonItem()
-            btn.image = UIImage(named: "sidemenu.png")
-            btn.target = revealVC
-            btn.action = #selector(revealVC.revealToggle(_:))
-            btn.tintColor = UIColor(red: 0.96, green: 0.96, blue: 0.86, alpha: 1.00)
-            
-            self.navigationItem.leftBarButtonItem = btn
-            
-            self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
+        self.navigationItem.rightBarButtonItem = rightBtn
+         */
         
         self.navigationController?.navigationBar.backgroundColor = .clear
     }
@@ -103,7 +100,24 @@ extension MainViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             var cell: UITableViewCell
             cell = tableView.dequeueReusableCell(withIdentifier: "mainCell")!
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: (self.image?.size.height)!))
+            imageView.image = image
+            imageView.isUserInteractionEnabled = true
             cell.backgroundColor = .black
+            cell.addSubview(imageView)
+            
+            if let revealVC = self.revealViewController() {
+                let btn = UIButton()
+                btn.setImage(UIImage(named: "sidemenu.png"), for: .normal)
+                btn.frame = CGRect(x: imageView.frame.size.width / 40, y: imageView.frame.size.height / 35, width: 30, height: 30)
+                btn.addTarget(revealVC, action: #selector(revealVC.revealToggle(_:)), for: .touchUpInside)
+                btn.setImage(btn.currentImage?.withTintColor(Utils.themeColor), for: .normal)
+                
+                imageView.addSubview(btn)
+                
+                self.view.addGestureRecognizer(revealVC.panGestureRecognizer())
+            }
+            
             return cell
         } else if indexPath.section == 1{
             var cell: DailyRow
@@ -130,8 +144,8 @@ extension MainViewController: UITableViewDelegate {
         if section == 0 {
             let v = UIView()
             v.frame.origin = CGPoint(x: 0, y: 0)
-            v.frame.size = CGSize(width: self.view.frame.width , height: 10)
-            v.backgroundColor = .black
+            v.frame.size = CGSize(width: self.view.frame.width , height: 0)
+            v.backgroundColor = .white
             
             return v
         } else {
@@ -139,7 +153,7 @@ extension MainViewController: UITableViewDelegate {
             let textHeader = UILabel()
             
             textHeader.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight(rawValue: 2.0))
-            textHeader.textColor = UIColor(red: 0.96, green: 0.96, blue: 0.86, alpha: 1.00)
+            textHeader.textColor = Utils.themeColor
             
             v.frame.origin = CGPoint(x: 0, y: 0)
             
@@ -154,10 +168,18 @@ extension MainViewController: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        } else {
+            return 25
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return CGFloat(300)
+            return (self.image?.size.height)!
         } else {
             return HttpManager().loadThumbnailImage(BoxOffice.shared.dailyRankList[0].imageUrl!).size.height + DailyRow().hardCodedPadding * 5
         }

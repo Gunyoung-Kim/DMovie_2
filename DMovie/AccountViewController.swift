@@ -19,7 +19,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "profilecell")
-        cell.backgroundColor = .white
+        cell.backgroundColor = .black
         
         /* 제목 텍스트 설정 */
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)
@@ -41,6 +41,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.textLabel?.text = "아이디"
             cell.detailTextLabel?.text = self.uinfo.loginId ?? "로그인"
         }
+        cell.textLabel?.textColor = Utils.themeColor
+        cell.detailTextLabel?.textColor = Utils.themeColor
         
         return cell
     }
@@ -78,7 +80,13 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
+        let tableBackView = UIView(frame: CGRect(x: 0, y: 0, width: self.tv.frame.width, height: self.tv.frame.height))
+        tableBackView.backgroundColor = .black
+        self.tv.separatorColor = Utils.themeColor
+        self.tv.backgroundView = tableBackView
+        self.tv.isScrollEnabled = false
+        
+        self.view.backgroundColor = .black
         
         /* 네비게이션 아이템 설정 */
         self.navigationItem.title = "My Account"
@@ -88,6 +96,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         closeBtn.target = self
         closeBtn.action = #selector(close(_ :))
         closeBtn.title = "닫기"
+        closeBtn.tintColor = Utils.themeColor
         
         self.navigationItem.leftBarButtonItem = closeBtn
         
@@ -125,7 +134,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         let v = UIView()
         
         v.frame = CGRect(x: 0, y: self.tv.frame.origin.y + self.tv.frame.height, width: self.view.frame.width, height: 40)
-        v.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.0)
+        v.backgroundColor = .darkGray
         
         self.view.addSubview(v)
         
@@ -134,6 +143,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         btn.frame.size.width = 100
         btn.center.x = v.frame.width / 2
         btn.center.y = v.frame.height / 2
+        btn.tintColor = Utils.themeColor
         
         if uinfo.isLogin == false {
             btn.setTitle("로그인", for: .normal)

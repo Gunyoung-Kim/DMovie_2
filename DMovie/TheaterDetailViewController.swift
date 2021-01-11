@@ -13,6 +13,14 @@ class TheaterDetailViewController: UIViewController {
     
     @IBOutlet var webView: WKWebView!
     
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         let linkString = theater.link
         
@@ -24,5 +32,7 @@ class TheaterDetailViewController: UIViewController {
             let detailReq = URLRequest(url: detailurl!)
             self.webView.load(detailReq)
         }
+        
+        self.navigationItem.title = theater.name!
     }
 }

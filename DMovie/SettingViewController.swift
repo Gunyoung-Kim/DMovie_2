@@ -39,8 +39,11 @@ class SettingViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
+        let tableBackView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+        tableBackView.backgroundColor = .black
+        self.tableView.backgroundView = tableBackView
         self.tableView.tintColor = .clear
+        self.tableView.isScrollEnabled = false
         
         let closeBtn = UIBarButtonItem()
         closeBtn.style = .plain

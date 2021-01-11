@@ -13,7 +13,13 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet var webView: WKWebView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.title = mvo.movieNm!
         let detailurl = URL(string: mvo.link!)
             
         let detailReq = URLRequest(url: detailurl!)
