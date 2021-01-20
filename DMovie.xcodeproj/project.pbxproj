@@ -14,7 +14,6 @@
 		96237F2825A3487A00B06556 /* account@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96237F2725A3487A00B06556 /* account@2x.jpg */; };
 		96237F2B25A3549500B06556 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96237F2A25A3549500B06556 /* MovieDetailViewController.swift */; };
 		962A0A7F2598C0B900B15C55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962A0A7E2598C0B900B15C55 /* ViewController.swift */; };
-		962A0A822598C32900B15C55 /* thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 962A0A812598C32900B15C55 /* thumbnail.jpg */; };
 		962A0A862598CC8D00B15C55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962A0A852598CC8D00B15C55 /* MainViewController.swift */; };
 		962A0A892598D94E00B15C55 /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962A0A882598D94E00B15C55 /* MovieVO.swift */; };
 		962A0A8C2598DA4C00B15C55 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962A0A8B2598DA4B00B15C55 /* HttpManager.swift */; };
@@ -33,6 +32,7 @@
 		96C790D225A5F78400E7BA33 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C790D125A5F78400E7BA33 /* Utils.swift */; };
 		96C790D625A6076A00E7BA33 /* DMovieIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C790D525A6076A00E7BA33 /* DMovieIcon.png */; };
 		96C790D925A6314D00E7BA33 /* TheaterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C790D825A6314D00E7BA33 /* TheaterDetailViewController.swift */; };
+		96E011D225B85B700031AFF1 /* ScreeningRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E011D125B85B700031AFF1 /* ScreeningRow.swift */; };
 		96F3759D2596157D00D2C784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F3759C2596157D00D2C784 /* AppDelegate.swift */; };
 		96F3759F2596157D00D2C784 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F3759E2596157D00D2C784 /* SceneDelegate.swift */; };
 		96F375A42596157D00D2C784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F375A22596157D00D2C784 /* Main.storyboard */; };
@@ -53,7 +53,6 @@
 		96237F2725A3487A00B06556 /* account@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "account@2x.jpg"; sourceTree = "<group>"; };
 		96237F2A25A3549500B06556 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		962A0A7E2598C0B900B15C55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		962A0A812598C32900B15C55 /* thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbnail.jpg; sourceTree = "<group>"; };
 		962A0A852598CC8D00B15C55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		962A0A882598D94E00B15C55 /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
 		962A0A8B2598DA4B00B15C55 /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		96C790D125A5F78400E7BA33 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		96C790D525A6076A00E7BA33 /* DMovieIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DMovieIcon.png; sourceTree = "<group>"; };
 		96C790D825A6314D00E7BA33 /* TheaterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterDetailViewController.swift; sourceTree = "<group>"; };
+		96E011D125B85B700031AFF1 /* ScreeningRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreeningRow.swift; sourceTree = "<group>"; };
 		96F375992596157D00D2C784 /* DMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F3759C2596157D00D2C784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F3759E2596157D00D2C784 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +123,6 @@
 				96237F2725A3487A00B06556 /* account@2x.jpg */,
 				9694841E25A2321000A373E7 /* sidemenu.png */,
 				96A5113825ACAB2A00569724 /* toy_story.jpg */,
-				962A0A812598C32900B15C55 /* thumbnail.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -164,6 +163,7 @@
 				9655021425A0A2A900FF8E60 /* TheaterViewController.swift */,
 				9694841525A1FCEE00A373E7 /* UserInfoManager.swift */,
 				9655021725A0A36C00FF8E60 /* TheaterVO.swift */,
+				96E011D125B85B700031AFF1 /* ScreeningRow.swift */,
 				9655021A25A0A47D00FF8E60 /* Theaters.swift */,
 				962A0A852598CC8D00B15C55 /* MainViewController.swift */,
 				96C790D125A5F78400E7BA33 /* Utils.swift */,
@@ -242,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96C790D625A6076A00E7BA33 /* DMovieIcon.png in Resources */,
-				962A0A822598C32900B15C55 /* thumbnail.jpg in Resources */,
 				96F375AC2596157E00D2C784 /* LaunchScreen.storyboard in Resources */,
 				9694843525A244C800A373E7 /* cgv.png in Resources */,
 				96A5113925ACAB2A00569724 /* toy_story.jpg in Resources */,
@@ -321,6 +320,7 @@
 				96237F2B25A3549500B06556 /* MovieDetailViewController.swift in Sources */,
 				96F375BD259656BE00D2C784 /* DailyRow.swift in Sources */,
 				96C790D225A5F78400E7BA33 /* Utils.swift in Sources */,
+				96E011D225B85B700031AFF1 /* ScreeningRow.swift in Sources */,
 				96077268259E212A0090D8FB /* BoxOffice.swift in Sources */,
 				9607726C259E28FF0090D8FB /* WeeklyRow.swift in Sources */,
 				96F375A72596157D00D2C784 /* DMovie.xcdatamodeld in Sources */,

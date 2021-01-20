@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class MainViewController: UIViewController {
-    var categories = ["오늘의 영화", "주간 베스트 영화"]
+    var categories = ["극장 상영 영화", "오늘의 영화", "주간 베스트 영화"]
     let image = UIImage(named: "toy_story.jpg")
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,6 +82,25 @@ class MainViewController: UIViewController {
             
                 BoxOffice.shared.weeklyRankList.append(mvo)
             }
+            
+            let screening = jsonObject["screeningMovies"] as! NSArray
+            
+            for movie in screening {
+                let m = movie as! NSDictionary
+                let mvo = MovieVO()
+                
+                mvo.movieNm = m["title"] as? String
+                mvo.rankInten = String(m["rankInten"] as! Int)
+                if m["rankOldAndNew"] as! Int == 0 {
+                    mvo.rankOldAndNew = "false"
+                } else {
+                    mvo.rankOldAndNew = "true"
+                }
+                mvo.link = m["link"] as? String
+                mvo.imageUrl = m["thumbnailLink"] as? String
+            
+                BoxOffice.shared.screeningList.append(mvo)
+            }
         } catch {
             NSLog("parse Error!")
         }
@@ -119,7 +138,13 @@ extension MainViewController: UITableViewDataSource {
             }
             
             return cell
-        } else if indexPath.section == 1{
+        } else if indexPath.section == 1 {
+            var cell: ScreeningRow
+            cell = tableView.dequeueReusableCell(withIdentifier: "screeningCell") as! ScreeningRow
+            cell.viewcontroller = self
+            cell.backgroundColor = .black
+            return cell
+        } else if indexPath.section == 2 {
             var cell: DailyRow
             cell = tableView.dequeueReusableCell(withIdentifier: "dailyCell") as! DailyRow
             cell.viewcontroller = self
@@ -180,6 +205,8 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return (self.image?.size.height)!
+        } else if indexPath.section == 1 {
+            return HttpManager().loadThumbnailImage(BoxOffice.shared.screeningList[0].imageUrl!).size.height + ScreeningRow().hardCodedPadding * 5
         } else {
             return HttpManager().loadThumbnailImage(BoxOffice.shared.dailyRankList[0].imageUrl!).size.height + DailyRow().hardCodedPadding * 5
         }

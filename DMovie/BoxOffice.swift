@@ -13,4 +13,5 @@ class BoxOffice {
     
     lazy var dailyRankList: [MovieVO] = [MovieVO]()
     lazy var weeklyRankList: [MovieVO] = [MovieVO]()
+    lazy var screeningList: [MovieVO] = [MovieVO]()
 }

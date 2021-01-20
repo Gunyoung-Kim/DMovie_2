@@ -14,7 +14,7 @@ class HttpManager {
     
     func loadThumbnailImage(_ imageUrl: String) -> UIImage {
         if imageUrl == "" {
-            return UIImage(named: "thumbnail.jpg")!
+            return UIImage(named: "toy_story.jpg")!
         }
         let url = URL(string: imageUrl)
         let imageData = try! Data(contentsOf: url!)
